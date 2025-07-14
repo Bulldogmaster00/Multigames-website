@@ -1,0 +1,406 @@
+/* style.css */
+
+:root {
+    --primary-color: #007bff; /* Um azul legal, similar ao Poki */
+    --secondary-color: #6c757d;
+    --background-color: #f8f9fa;
+    --text-color: #343a40;
+    --card-background: #ffffff;
+    --header-background: #ffffff;
+    --footer-background: #343a40;
+    --footer-text-color: #f8f9fa;
+    --border-color: #dee2e6;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--background-color);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary-color);
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+h1, h2, h3 {
+    margin-bottom: 15px;
+    color: var(--text-color);
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2em;
+}
+
+/* Header */
+.main-header {
+    background-color: var(--header-background);
+    padding: 15px 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.main-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* Permite quebrar em telas menores */
+}
+
+.logo a {
+    font-size: 1.8em;
+    font-weight: 700;
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+.main-nav {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.main-nav .search-bar {
+    padding: 8px 15px;
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    font-size: 0.9em;
+    width: 250px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.main-nav .search-bar:focus {
+    border-color: var(--primary-color);
+}
+
+.main-nav a {
+    color: var(--text-color);
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.main-nav a:hover {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+/* Hero Section */
+.hero-section {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://via.placeholder.com/1600x400/333/eee?text=MultiGames+Hero') no-repeat center center/cover;
+    color: #fff;
+    text-align: center;
+    padding: 80px 20px;
+    margin-bottom: 40px;
+}
+
+.hero-section h1 {
+    color: #fff;
+    font-size: 3.5em;
+    margin-bottom: 15px;
+    text-align: center; /* Ensures the hero title is centered */
+}
+
+.hero-section p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+}
+
+.cta-button {
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #0056b3; /* Azul mais escuro no hover */
+}
+
+/* Games Sections */
+.games-section {
+    padding: 40px 0;
+    background-color: #fff;
+    margin-bottom: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.game-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 25px;
+    justify-content: center;
+}
+
+.game-card {
+    background-color: var(--card-background);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.game-card a {
+    display: block; /* Faz o link cobrir todo o card */
+    padding-bottom: 15px; /* Espaçamento interno inferior */
+    color: var(--text-color); /* Garante a cor do texto no link */
+    text-decoration: none;
+}
+
+.game-card a:hover {
+    text-decoration: none; /* Remove sublinhado ao passar o mouse */
+}
+
+.game-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.game-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.game-card h3 {
+    font-size: 1.1em;
+    margin: 0 10px 5px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.game-card p {
+    font-size: 0.85em;
+    color: var(--secondary-color);
+    margin: 0 10px;
+}
+
+/* Game Categories */
+.game-categories {
+    padding: 40px 0;
+    margin-bottom: 80px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.categories-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 20px;
+    justify-content: center;
+}
+
+.category-card {
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: 600;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    text-decoration: none;
+}
+
+.category-card:hover {
+    background-color: #0056b3;
+    transform: translateY(-3px);
+    text-decoration: none;
+}
+
+/* Footer */
+.main-footer {
+    background-color: var(--footer-background);
+    color: var(--footer-text-color);
+    padding: 30px 0;
+    text-align: center;
+    font-size: 0.9em;
+}
+
+.main-footer .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.footer-links a {
+    color: var(--footer-text-color);
+    margin: 0 10px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: var(--primary-color);
+    text-decoration: underline;
+}
+
+/* Game Page Specific Styles (for games/eggdog-extended.html and games/Serenitrove.html) */
+.game-page-content {
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.fullscreen-tip {
+    margin-top: 15px;
+    font-size: 0.95em;
+    color: var(--secondary-color);
+    text-align: center;
+    max-width: 600px; /* Limita a largura para melhor leitura */
+    line-height: 1.5;
+}
+
+.game-title {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 2.5em;
+}
+
+.game-description {
+    text-align: center;
+    margin-bottom: 30px;
+    max-width: 800px;
+}
+
+.game-wrapper {
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%; /* Proporção 16:9 */
+    max-width: 1000px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    margin-bottom: 30px;
+}
+
+.game-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    display: block;
+}
+
+.game-info {
+    background-color: #fff;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 900px;
+    margin-top: 20px;
+    text-align: left;
+}
+
+.game-info h3 {
+    margin-bottom: 15px;
+    color: var(--primary-color);
+}
+
+.game-info p {
+    margin-bottom: 10px;
+}
+
+.game-info strong {
+    color: var(--text-color);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .main-header .container {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .main-nav {
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .main-nav .search-bar {
+        width: 100%;
+        max-width: 300px; /* Limita a largura da barra de busca */
+    }
+
+    .hero-section h1 {
+        font-size: 2.5em;
+    }
+
+    .game-grid, .categories-grid {
+        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    }
+}
+
+@media (max-width: 480px) {
+    .main-header .logo a {
+        font-size: 1.5em;
+    }
+
+    .hero-section h1 {
+        font-size: 2em;
+    }
+
+    .hero-section p {
+        font-size: 1em;
+    }
+
+    .cta-button {
+        padding: 10px 20px;
+        font-size: 1em;
+    }
+
+    .game-card h3 {
+        font-size: 1em;
+    }
+
+    .category-card {
+        padding: 15px;
+        font-size: 1em;
+    }
+
+    .game-title {
+        font-size: 2em;
+    }
+    .game-description {
+        font-size: 0.9em;
+    }
+}
